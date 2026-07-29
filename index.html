@@ -1217,8 +1217,6 @@ html&gt;body{padding:0}&lt;/style&gt;
         svg.appendChild(make('text', { x: x(d.year), y: height - 18, 'text-anchor': 'middle', class: 'tick text-small' }, String(d.year)));
       }
     });
-    svg.appendChild(make('text', { x: margin.left, y: 14, class: 'axis-label text-small' }, 'Pertumbuhan kumulatif jumlah pengangguran'));
-
     const gradSeries = data.map(d =&gt; ({ year: d.year, value: d.g }));
     const natSeries = data.map(d =&gt; ({ year: d.year, value: d.n }));
     const area = `${linePath(gradSeries, x, y)} ${natSeries.slice().reverse().map(d =&gt; `L${x(d.year).toFixed(2)},${y(d.value).toFixed(2)}`).join(' ')} Z`;
